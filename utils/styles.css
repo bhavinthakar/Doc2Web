@@ -1,0 +1,45 @@
+.topic{
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+pre.code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+}
+
+.description{
+    padding: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+    
+}
+.image{
+    position: relative;
+    left: 0px;		
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+img {
+    width: 480px;
+    height: 360px;
+  }
+
+.subtopic{
+    padding: 20px;
+    text-decoration: underline;
+}
+
+.link{
+    
+}
