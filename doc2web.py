@@ -26,6 +26,19 @@ def code(line):
     global index2
     index2=3
 
+def scrollcode(line):
+    line=line.replace("scrollcode:","")
+    if "<" in line:
+        line=line.replace("<","&lt;")
+    if ">" in line:
+        line=line.replace(">","&gt;")
+    global globalLine
+    globalLine=line
+    global index1
+    index1=2
+    global index2
+    index2=3
+
 def description(line):
     line=line.replace("description:","")
     global globalLine
@@ -93,6 +106,11 @@ else:
             outputfile.write("</pre>")
             outputfile.write("<pre class=\"code\">")
             code(line)
+        elif "scrollcode:"==first:
+            outputfile.write("</div>")
+            outputfile.write("</pre>")
+            outputfile.write("<pre class=\"scrollcode\">")
+            scrollcode(line)
         elif "description:"==first:
             outputfile.write("</div>")
             outputfile.write("</pre>")

@@ -4,20 +4,36 @@
     color: white;
     text-align: center;
     padding: 5px;
+    display: inline-block;
+    
 }
 
 pre.code {
     background-color: #eee;
     border: 1px solid #999;
-    display: block;
+    display: inline-block;
     padding: 20px;
+    width: 100%;
+    overflow:scroll;
+    /* height:500px; */
+    
 }
 
+pre.scrollcode{
+    background-color: #eee;
+    border: 1px solid #999;
+    display: inline-block;
+    padding: 20px;
+    width: 100%;
+    overflow:scroll;
+    height:500px;
+}
 .description{
     padding: 20px;
     text-align: justify;
     text-justify: inter-word;
-    
+    display: inline-block;
+    width: 100%;
 }
 .image{
     position: relative;
@@ -27,7 +43,7 @@ pre.code {
     background-size: cover;
     text-align: center;
     padding: 20px;
-    
+    display: inline-block;
 }
 
 img {
@@ -38,8 +54,10 @@ img {
 .subtopic{
     padding: 20px;
     text-decoration: underline;
+    display: inline-block;
 }
 
 .link{
-    
+    padding: 20px;
+    display: inline-block;
 }
