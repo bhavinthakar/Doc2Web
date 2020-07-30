@@ -2531,7 +2531,7 @@
 </p1></div></pre><div class="description"><p1> To create a System we need to build a configuration script in python. So gem5 uses python to call the simObject and simObjects are written in C++ which makes its operational faster and customizable.
 </p1></div></pre><div class="description"><p1> We will build a configuration system like this:
 </p1></div></pre><div class="image"><img src= "./simpleconfig.png"
-></div></pre><div class="subtopic"><h3>5.  Create a configuration script
+></div></pre><div class="subtopic"><h3>1.  Create a configuration script
 </h3></div></pre><div class="description"><p1> Create a new file with py extension Ex. simple.py. I have created a new directory named myScripts under configs folder
 </p1></div></pre><div class="description"><p1> Type in terminal 
 </p1></div></pre><pre class="code"><code> mkdir configs/myScripts
@@ -2581,10 +2581,10 @@
 </code> <code>print("Beginning Simulation...")
 </code> <code>exit_event=m5.simulate()
 </code> <code>print("Exiting @ tick {} because {}".format(m5.curTick(),exit_event.getCause()))
-</code> </div></pre><div class="subtopic"><h3>6.  Run the script
+</code> </div></pre><div class="subtopic"><h3>2.  Run the script
 </h3></div></pre><div class="description"><p1> To run the python script type this in command line in the gem5 directory
 </p1></div></pre><pre class="code"><code> build/RISCV/gem5.opt configs/myScripts/simple.py
-</code> </div></pre><div class="subtopic"><h3>7.  Output
+</code> </div></pre><div class="subtopic"><h3>3.  Output
 </h3></div></pre><pre class="code"><code> gem5 Simulator System.  http://gem5.org
 </code> <code>gem5 is copyrighted software; use the --copyright option for details.
 </code> <code>gem5 version 20.0.0.2
