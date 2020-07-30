@@ -1,0 +1,42 @@
+topic: Git
+subtopic: Introduction
+description: git is a version control system which can be used for collabrating into projects together and book keeping of all the changes we made in the repository.
+image: ./gitArch.png
+subtopic: Initialize git
+code: git init
+description: It is used to intitalize git software package
+description: Example output
+code: Initialized empty Git repository in /home/bthakar/Desktop/demoC/.git/
+subtopic: Configure git
+code: git config --global user.name "#gitusername"
+description: Add user name
+code: git config --global user.email "#gitemail"
+decription : Add email id
+description: We can use three flags --global --local --system. global for declaring the config file globally on computer; local for declaring the config file for a particular directory ; system for declaring the config file for particular user
+subtopic: Add remote origin
+code: git remote add origin </link>
+description: It is used to add remote repository link
+subtopic: Add files to staging index
+code: git add .
+description: It is used to add files to staging index
+subtopic: Commit files to repository
+code: git commit -m "Initial Commit"
+description: It is used to commit the changes from staging index
+description: Example output
+code: [master (root-commit) 18116c6] Initial Commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 hello.txt
+subtopic: Push to repository
+code: git push origin master
+description: It is used to push the committed changes to the remote repository
+description: Example output
+code: Username for 'https://github.com': bhavinthakar
+Password for 'https://bhavinthakar@github.com': 
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 245 bytes | 245.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/bhavinthakar/DemoRepo.git
+ * [new branch]      master -> master
+
+
+

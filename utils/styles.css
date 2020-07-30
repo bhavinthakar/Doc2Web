@@ -44,6 +44,7 @@ pre.scrollcode{
     text-align: center;
     padding: 20px;
     display: inline-block;
+    width: 100%;
 }
 
 img {
@@ -52,12 +53,26 @@ img {
   }
 
 .subtopic{
-    padding: 20px;
+    padding: 1px;
     text-decoration: underline;
     display: inline-block;
 }
 
 .link{
-    padding: 20px;
+    padding: 1px;
     display: inline-block;
+}
+
+.step{
+    padding: 1px;
+    /* text-decoration: underline; */
+    display: inline-block;
+}
+
+.content{
+    padding: 1px;
+    text-decoration: underline;
+    display: inline-block;
+    width: 100%;
+
 }

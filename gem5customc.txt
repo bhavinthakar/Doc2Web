@@ -1,0 +1,41 @@
+topic: Run Custom source code in gem5
+description: In this tutorial we will import a custom source code and use it as simulation for gem5. We are using a C source code to print the arguments one by one
+step: prepare C or C++ code
+code: #include <stdio.h>
+
+int main(int argc, char **argv) {
+    size_t i;
+    for (i = 1; i < (size_t)argc; ++i)
+        printf("%s\n", argv[i]);
+    return 0;
+}
+
+step: Compile the code using gcc with static linking
+code: gcc -O0 -ggdb3 -std=c99 -static -o wordPrint wordPrint.c
+
+step: Point the process workload in the configuration with the location of custom source code
+step: Run the configuration script
+code: build/RISCV/gem5.opt \
+  configs/myScripts/simple.py \
+  -o 'asdf qwer' 
+
+description: here arguments are given using -o flag
+step: Output
+code: gem5 version 20.0.0.2
+gem5 compiled June 19 2020 00:13:37
+gem5 started June 19 2020 01:11:43
+gem5 executing on bthakar-PC, pid 24941
+command line: build/RISCV/gem5.opt configs/pythonscripts/simple.py
+
+<orphan System>
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+Beginning Simulation...
+info: Entering event queue @ 0.  Starting simulation...
+warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/bthakar/MyWork/gem5/configs/myPrograms/wordPrint'
+info: Increasing stack size by one page.
+asdf
+qwer
+Exiting @ tick 446784000 because exiting with last active thread context
+Memory Usage: 670884 KBytes

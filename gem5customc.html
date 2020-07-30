@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./utils/styles.css">
+    </head>
+    <body>
+<div class="topic"><h1> Run Custom source code in gem5
+</h1></div></pre><div class="description"><p1> In this tutorial we will import a custom source code and use it as simulation for gem5. We are using a C source code to print the arguments one by one
+</p1></div></pre><div class="step"><h3>Step 1.  prepare C or C++ code
+</h3></div></pre><pre class="code"><code> #include &lt;stdio.h&gt;
+</code> <code>int main(int argc, char **argv) {
+</code> <code>    size_t i;
+</code> <code>    for (i = 1; i < (size_t)argc; ++i)
+</code> <code>        printf("%s\n", argv[i]);
+</code> <code>    return 0;
+</code> <code>}
+</code> </div></pre><div class="step"><h3>Step 2.  Compile the code using gcc with static linking
+</h3></div></pre><pre class="code"><code> gcc -O0 -ggdb3 -std=c99 -static -o wordPrint wordPrint.c
+</code> </div></pre><div class="step"><h3>Step 3.  Point the process workload in the configuration with the location of custom source code
+</h3></div></pre><div class="step"><h3>Step 4.  Run the configuration script
+</h3></div></pre><pre class="code"><code> build/RISCV/gem5.opt \
+</code> <code>  configs/myScripts/simple.py \
+</code> <code>  -o 'asdf qwer' 
+</code> </div></pre><div class="description"><p1> here arguments are given using -o flag
+</p1></div></pre><div class="step"><h3>Step 5.  Output
+</h3></div></pre><pre class="code"><code> gem5 version 20.0.0.2
+</code> <code>gem5 compiled June 19 2020 00:13:37
+</code> <code>gem5 started June 19 2020 01:11:43
+</code> <code>gem5 executing on bthakar-PC, pid 24941
+</code> <code>command line: build/RISCV/gem5.opt configs/pythonscripts/simple.py
+</code> <code><orphan System>
+</code> <code>Global frequency set at 1000000000000 ticks per second
+</code> <code>warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+</code> <code>Beginning Simulation...
+</code> <code>info: Entering event queue @ 0.  Starting simulation...
+</code> <code>warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+</code> <code>      Returning '/home/bthakar/MyWork/gem5/configs/myPrograms/wordPrint'
+</code> <code>info: Increasing stack size by one page.
+</code> <code>asdf
+</code> <code>qwer
+</code> <code>Exiting @ tick 446784000 because exiting with last active thread context
+</code> <code>Memory Usage: 670884 KBytes
+</code> </div></pre>    </body>
+</html>
