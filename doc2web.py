@@ -2,7 +2,7 @@ import sys
 index1=0
 index2=0
 globalLine="awesome"
-count=1;
+count=1
 stepcount=1
 contentCount=1
 def topic(line):
