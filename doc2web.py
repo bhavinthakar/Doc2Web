@@ -112,8 +112,8 @@ else:
     print("Processing data")
     htmlList=["<h1>","</h1>","<code>","</code> ","<p1>","</p1>","<img src=",">","<h3>","</h3>","<a href=","</a>","<h4>","</h4>","<h2>","</h2>"]
     
-    readfile=open(sys.argv[1],"r")
-    outputfile=open(sys.argv[2],"w")
+    readfile=open("./input/"+sys.argv[1],"r")
+    outputfile=open("./output/"+sys.argv[2],"w")
     structure= open("./utils/beginning.html","r")
     for line in structure:
         outputfile.write(line)
